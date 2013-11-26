@@ -1,0 +1,44 @@
+<p>
+So far, the stories you have learned how to create with Twee have been displayed more or less as you have entered them in your source code. The only exceptions have been certain notations you use for <a href="simple/formatting.html">formatting</a> and <a href="simple/links.html">creating links</a>. You can create complete stories with what you already knew, but what if you wanted to recreate a passage like this?
+</p>
+
+<blockquote>
+
+<p>
+As you reach the door you hear the crash of a giant stone slab as it falls from the ceiling. Turning around, you see that your exit is now blocked.
+</p>
+
+<p>
+If you have a Silver Key, you may try to open the door by turning to 158.
+</p>
+
+<p>
+If you do not possess a Silver Key, turn to 259.
+</p>
+
+</blockquote>
+
+<p class="source">
+(Joe Dever, <cite>Flight from the Dark</cite>)
+</p>
+
+<p>
+You could certainly ask your readers to click the appropriate link, but wouldn't it be better if your story could remember if the protagonist picked up the silver key earlier in the story, and only display it if it's appropriate? Code lets you accomplish these kinds of tasks. In short, <b>code consists of instructions to be carried out by a computer</b>, not text to be read by the reader.
+</p>
+
+<p>
+In Twee, code takes the form of <b>macros</b> placed in your story's text. These are set off by double angle brackets, <code>&lt;&lt;like this&gt;&gt;</code>. When a passage is displayed, the macro invocation isn't displayed; instead, its code runs. For example, this source code would produce something akin to the text quoted above:
+</p>
+
+<blockquote><code>
+As you reach the door you hear the crash of a giant stone slab as it falls from the ceiling. Turning around, you see that your exit is now blocked.<br />
+&lt;&lt;if $hasSilverKey&gt;&gt;<br />
+* [[Open the door with your key]]<br />
+&lt;&lt;else&gt;&gt;<br />
+* [[Try to force the door open]]<br />
+&lt;&lt;endif&gt;&gt;
+</code></blockquote>
+
+<p>
+Even though macros are never seen by a reader, they are designed so that they make sense to someone reading your source code &mdash; even someone who may not be familiar with them, as you are right now. Nevertheless, <b>you don't need to understand how a macro works.</b> You only need to know how to use it to accomplish what your story needs to do.
+</p>

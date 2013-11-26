@@ -1,0 +1,32 @@
+
+
+<h2>The &lt;&lt;choice&gt;&gt; Macro</h2>
+
+<p>
+The <code>&lt;&lt;choice&gt;&gt;</code> macro locks away paths in your story. A choice looks exactly like a regular link, but as soon as it's clicked, it disables all the other choices in the same tiddler. Here's how it might work:
+</p>
+
+<p class="code">
+:: Start<br />
+It's a dark and stormy night aboard the [[Orient Express|http://en.wikipedia.org/wiki/Orient_Express]]. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper]].<br />
+<br />
+"Hello?" a female voice asks from behind you, perhaps from the entrance of the car.<br />
+* &lt;&lt;choice "Turn around"&gt;&gt;<br />
+* &lt;&lt;choice "Keep reading"&gt;&gt;
+</p>
+
+<p>
+Since choices require more thought than your average link, it's a good idea to format them a little differently than regular links. One popular way to do it is to use bullets, but it's up to you.
+</p>
+
+<p class="developer">
+Choices are classed <b>choice</b> in CSS, so you can change their formatting with the selector <code>span.choice</code>.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('maskmacro')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('maskmacro')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('actionsmacro')">Next</a> <a href="javascript:void(0)" onclick="showPage('actionsmacro')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

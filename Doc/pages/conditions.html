@@ -1,0 +1,68 @@
+
+
+<h2>Conditions and &lt;&lt;if&gt;&gt;</h2>
+
+<p>
+This is all well and good, but we haven't yet figured out how to affect the outcome of the story with variables. For example, if the main character has run out of bullets, he shouldn't get a choice to fire his gun during a tense situation.
+</p>
+
+<p>
+Enter the <code>&lt;&lt;if&gt;&gt;</code> macro. It displays a part of a tiddler only if a <i>condition</i> is true. Here's an example:
+</p>
+
+<p class="code">
+:: Customs<br />
+You approach the customs check in.<br />
+<br />
+&lt;&lt;if $lostPassport&gt;&gt;<br />
+<br />
+You've no idea how you'll get back into the country without a passport. You can't believe your poor luck, losing all your possessions.<br />
+<br />
+&lt;&lt;endif&gt;&gt;<br />
+<br />
+The line shifts forward uneasily.
+</p>
+
+<p>
+There are two important things to notice here. First of all, <code>&lt;&lt;if&gt;&gt;</code> has a corresponding <code>&lt;&lt;endif&gt;&gt;</code> macro. It closes off the part of the tiddler that should be shown if the condition is true. If you forget to put in an <code>&lt;&lt;endif&gt;&gt;</code>, you'll get this error message in your tiddler:
+</p>
+
+<p align="center">
+<span style="text-align: center; background-color: pink; color: black; font-weight: bold">can't find matching endif</span>
+</p>
+
+<p>
+The second thing is that the condition is just a variable! There's no expression there at all. There is a third kind of value out there. It's sometimes called <i>truth</i>, sometimes <i>Boolean</i>, after the guy who came up with the concept of doing math with truth and lies. I'll call it truth, to make it easier to remember. A truth value must either be <i>true</i> or <i>false</i>. There's no <i>maybe</i> here. These values are written out without any quotation marks, the way numbers are.
+</p>
+
+<p>
+So these are valid conditions:
+</p>
+
+<p class="code">
+:: Unsurprising<br />
+&lt;&lt;if true&gt;&gt;<br />
+You'll always see this.<br />
+&lt;&lt;endif&gt;&gt;<br />
+<br />
+&lt;&lt;if false&gt;&gt;<br />
+You'll never see this.<br />
+&lt;&lt;endif&gt;&gt;<br />
+</p>
+
+<p>
+If you put a number or string in a condition, the computer will do its best to convert it to a truth value. All positive numbers are converted to true. All negative numbers, as well as the number 0, are converted to false. Any string with anything in it is converted to true. A string with no characters in it at all is considered false. Truth values can be converted to strings and numbers, but you'd never want to. (True is the equivalent of the number 1, while false is 0. True becomes the string "true", and false becomes "false".)
+</p>
+
+<p>
+ 
+</p>
+
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('variables')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('variables')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('logic')">Next</a> <a href="javascript:void(0)" onclick="showPage('logic')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

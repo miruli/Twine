@@ -1,0 +1,59 @@
+<p>
+Before you learn about the rest of the macros available, you need to talk about a new concept called an <b>expression</b>. An expression is a lot like a mathematical formula. When a computer sees an expression, it simplifies it into a single value. This is a very simple expression:
+</p>
+
+<blockquote><code>
+2 + 2
+</code></blockquote>
+
+<p>
+When a computer processes it, it results in the number 4. This process is called <b>evaluation</b>. This isn't algebra; everything you start with has to be a known quantity. You can do all the basic mathematical things you'd expect in an expression.
+</p>
+
+<blockquote><code>
+(1 + 2) * 4 + (3 + 2) / 5
+</code></blockquote>
+
+<p>
+This expression evaluates to the number 13. The computer follows the normal order of operations in mathematics: first multiplying and dividing, then adding and subtracting. You can group <b>subexpressions</b> together and force them to be evaluated first with parentheses.
+</p>
+
+<p>
+You can also use strings in an expression. As noted before, a string is a bunch of characters strung together, demarcated by either double or single quotes. You can use strings in expressions:
+</p>
+
+<blockquote><code>
+"Hello" + " " + "sailor"
+</code></blockquote>
+
+<p>
+This expression pushes the strings together, and evaluates to <code>"Hello sailor"</code>. Notice that a space had to be added between the words; computers aren't smart enough to do that for us. Also, you can only add strings together. You can't subtract them, much less multiply or divide them.
+</p>
+
+<p>
+You can print out an expression in a passage using the <code>&lt;&lt;print&gt;&gt;</code> macro. This, for example, shows the number of rounds in a pistol in a roundabout fashion:
+</p>
+
+<blockquote><code>
+:: You have found a pistol<br />
+It's got &lt;&lt;print 2 * 3&gt;&gt; bullets.
+</code></blockquote>
+
+<p>
+By themselves, expressions are not terribly interesting. The one exception is when you would like to add an element of randomness to your story. You can call a built-in function named <code>Math.random()</code>, which evaluates to a random decimal between 0 and 1. (More documentation on the <code>Math</code> object, which includes basic mathematical functions like sine and absolute values, can be found <a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference:Objects:Math">here</a>.) Combine this with <code>Math.round()</code>, which rounds a number to the nearest integer, and you can have a gun with a random number of bullets in it:
+</p>
+
+<blockquote><code>
+:: You have found a pistol<br />
+It's got &lt;&lt;print Math.round(Math.random() * 6)&gt;&gt; bullets.
+</code></blockquote>
+
+<p>
+You can try working with expressions below. Clicking the button will evaluate what you enter. If it doesn't seem to react, then you've made a mistake in your expression &mdash; for example, forgetting to put quotation marks around a string.
+</p>
+
+<input id="evalTest" /> <input type="button" onclick="document.getElementById('evalResults').innerHTML = 'This expression evaluates to: <code>' + eval(document.getElementById('evalTest').value) + '</code>'" value="Evaluate" />
+
+<p id="evalResults">
+
+</p>

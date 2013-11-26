@@ -1,0 +1,61 @@
+
+
+<h2>The &lt;&lt;tiddler&gt;&gt; Macro</h2>
+
+<p>
+The first macro we'll talk about is the simplest. All <code>&lt;&lt;tiddler&gt;&gt;</code> does is display the contents of one tiddler inside another.
+</p>
+
+<p class="code">
+:: One Tiddler<br />
+&lt;&lt;tiddler "Other Tiddler"&gt;&gt;<br />
+<br />
+:: Other Tiddler<br />
+Hello!
+</p>
+
+<p>
+<a name="string"></a>
+The quotation marks around the name of the tiddler are very important. In the biz, we call this a <i>string</i> &mdash; which is just a way to differentiate it from a number, or the name of the macro, or so on. Those quotation marks tell the macro where the name of the tiddler begins and ends. If you want to &mdash; like if your tiddler's name has quotation marks in it &mdash; you can use apostrophes instead to mark off the beginning and end of a string.
+</p>
+
+<p>
+You may be wondering, though, why would you ever want to do this. One use for this macro is to have something happen in your story no matter which way the reader goes. For example:
+</p>
+
+<p class="code">
+:: Start<br />
+It's a dark and stormy night aboard the [[Orient Express|http://en.wikipedia.org/wiki/Orient_Express]]. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper]].<br />
+<br />
+"Hello?" a female voice asks from behind you, perhaps from the entrance of the car.<br />
+* [[Turn around]]<br />
+* [[Keep reading]]<br />
+<br />
+<br />
+:: Turn around<br />
+"Yes?" you ask.<br />
+<br />
+&lt;&lt;tiddler '(woman speaks)'&gt;&gt;<br />
+<br />
+<br />
+:: Keep reading<br />
+"Please sir," the voice says, "it's important." At last you lift your gaze.<br />
+<br />
+&lt;&lt;tiddler '(woman speaks)'&gt;&gt;<br />
+<br />
+<br />
+:: (woman speaks)<br />
+You have not seen the woman before. She is dressed in a demure purple dress and speaks delicately, as if there is something she is going to great lengths to avoid discussing. "There's some trouble in my car I hope you could help me with."
+</p>
+
+<p>
+It's good practice to put parentheses around the names of tiddlers that aren't meant to be clicked directly, to keep them separate.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('macro')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('macro')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('maskmacro')">Next</a> <a href="javascript:void(0)" onclick="showPage('maskmacro')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

@@ -1,0 +1,268 @@
+<p>
+Variables can be very handy, but they would be much more useful if they could directly affect the text
+the reader sees. Consider a passage like this:
+</p>
+
+<blockquote>
+You return to Selator's hut. A merry fire is crackling in the kitchen, and something is cooking that
+smells delicious. He greets you warmly and asks, "Have you got the berry?" If you have got the purple
+berry of the Antherica plant, turn to <b>175</b>. If not, turn to <b>52</b>.
+</blockquote>
+
+<p class="source">
+(Steve Jackson and Ian Livingstone, <cite>Scorpion Swamp</cite>)
+</p>
+
+<p>
+It would be nice if the story could track whether the protagonist found the berry or not, and branch
+accordingly. In order to do this, we need to use <b>conditions</b>. A condition is a kind of expression
+that evaluates to either <code>true</code> or <code>false</code>. We can use these truth values directly
+to indicate whether the protagonist found the berries:
+</p>
+
+<blockquote><code>
+You have no doubt, from Selator's description, that you have found the Antherica plant. Half your mission
+is completed. Now you must return to the village with the precious berry. &lt;&lt;set $foundBerry = true&gt;&gt;
+</code></blockquote>
+
+<p>
+Then we can use the <code>&lt;&lt;if&gt;&gt;</code> macro to display a passage indicating victory:
+</p>
+
+<blockquote>
+
+<p><code>
+You return to Selator's hut. A merry fire is crackling in the kitchen, and something is cooking
+that smells delicious. He greets you warmly and asks, "Have you got the berry?"
+</code></p>
+
+<p><code>
+&lt;&lt;if $foundBerry&gt;&gt;<br />
+"Wonderful!" he exclaims...<br />
+&lt;&lt;endif&gt;&gt;
+</code></p>
+
+</blockquote>
+
+<p>
+Anything in between the initial <code>&lt;&lt;if&gt;&gt;</code> and <code>&lt;&lt;endif&gt;&gt;</code>
+is displayed if the condition is true. You may also include macros inside <code>&lt;&lt;if&gt;&gt;</code>
+statements, so we could display a longer victory message this way:
+
+</p>
+
+<blockquote>
+
+<p><code>
+You return to Selator's hut. A merry fire is crackling in the kitchen, and something is cooking that
+smells delicious. He greets you warmly and asks, "Have you got the berry?"
+</code></p>
+
+<p><code>
+&lt;&lt;if $foundBerry&gt;&gt;<br />
+&lt;&lt;display "Victory"&gt;&gt;<br />
+&lt;&lt;endif&gt;&gt;
+
+</code></p>
+
+</blockquote>
+
+<p>
+Our only remaining issue is that if the reader hasn't found the berry, nothing is displayed at all.
+To remedy this, we can use an <code>&lt;&lt;else&gt;&gt;</code> clause like this:
+</p>
+
+<blockquote>
+
+<p><code>
+You return to Selator's hut. A merry fire is crackling in the kitchen, and something is cooking
+that smells delicious. He greets you warmly and asks, "Have you got the berry?"
+</code></p>
+
+<p><code>
+&lt;&lt;if $foundBerry&gt;&gt;<br />
+&lt;&lt;display "Victory"&gt;&gt;<br />
+&lt;&lt;else&gt;&gt;<br />
+"That's too bad," he says. "I had such high hopes for you..."<br />
+&lt;&lt;endif&gt;&gt;
+</code></p>
+
+</blockquote>
+
+<p>
+<code>&lt;&lt;else&gt;&gt;</code> clauses do the exact opposite as <code>&lt;&lt;if&gt;&gt;</code>
+ones; they are only displayed if the condition is false. In either case, it's important to remember
+the <code>&lt;&lt;endif&gt;&gt;</code> at the end; otherwise, it won't be clear where the story should resume.
+</p>
+
+<p>
+Let's revisit the example of meals from the previous section. We had this passage:
+</p>
+
+<blockquote><code>
+You are feeling tired and hungry and you must stop to eat. &lt;&lt;set $meals = $meals - 1&gt;&gt;
+</code></blockquote>
+
+<p>
+Obviously, if the protagonist doesn't have any meals left, they can't eat. Let's fix this with
+<code>&lt;&lt;if&gt;&gt;</code>.
+</p>
+
+<blockquote><code>
+You are feeling tired and hungry and you must stop to eat.<br />
+<br />
+&lt;&lt;if $meals eq 0&gt;&gt;<br />
+&lt;&lt;display "Dying of hunger"&gt;&gt;<br />
+&lt;&lt;else&gt;&gt;<br />
+You continue on your journey... &lt;&lt;set $meals = $meals - 1&gt;&gt;<br />
+&lt;&lt;endif&gt;&gt;
+</code></blockquote>
+
+<p>
+&lt;eq&gt; is a <b>logical operator</b> that's short for 'equals.' Just like + adds two numbers
+together, <code>eq</code> compares two things together and returns whether they are identical.
+It works equally well with strings and numbers, but beware &mdash; the string <code>"2"</code>
+is not equal to the number 2.
+</p>
+
+<p>
+There are several logical operators available:
+</p>
+
+<table>
+
+<tr>
+<th>Operator</th>
+<th>Function</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>
+eq
+</td>
+<td>
+Evaluates to true if both sides are equal.
+</td>
+<td>
+<code>$bullets eq 5</code>
+</td>
+</tr>
+
+<tr>
+<td>
+neq
+</td>
+
+<td>
+Evaluates to true if both sides are not equal.
+</td>
+<td>
+<code>$friends neq $enemies</code>
+</td>
+</tr>
+
+
+<tr>
+<td>
+gt
+</td>
+<td>
+Evaluates to true if the left side is greater than the right side.
+</td>
+
+<td>
+<code>$money gt 3.75</code>
+</td>
+</tr>
+
+<tr>
+<td>
+gte
+</td>
+<td>
+Evaluates to true if the left side is greater than or equal to the right side.
+</td>
+<td>
+<code>$apples gte $carrots + 5</code>
+</td>
+
+</tr>
+
+<tr>
+<td>
+lt
+</td>
+<td>
+Evaluates to true if the left side is less than the right side.
+</td>
+<td>
+<code>$shoes lt $people * 2</code>
+</td>
+</tr>
+
+<tr>
+<td>
+
+lte
+</td>
+<td>
+Evaluates to true if the left side is less than or equal to the right side.
+</td>
+<td>
+<code>65 lte $age</code>
+</td>
+</tr>
+
+<tr>
+<td>
+and
+</td>
+<td>
+Evaluates to true if both sides evaluates to true.
+
+</td>
+<td>
+<code>$hasFriends and $hasFamily</code>
+</td>
+</tr>
+
+<tr>
+<td>
+or
+</td>
+<td>
+Evaluates to true if either side is true.
+</td>
+<td>
+<code>$boy or $girl</code>
+
+</td>
+</tr>
+
+<tr>
+<td>
+not
+</td>
+<td>
+Flips a true value to a false value, and vice versa.
+</td>
+<td>
+<code>(not $hungry) or ($location eq "restaurant")</code>
+</td>
+</tr>
+
+</table>
+
+<p>
+Conditions can quickly become complicated. The best way to keep things straight is to use parentheses
+to group things:
+</p>
+
+<blockquote><code>
+&lt;&lt;if ($master eq 'Selator') and ($foundBerry)&gt;&gt;<br />
+The walk back to the village is a happy one...<br />
+&lt;&lt;else&gt;&gt;<br />
+Well, you may not have succeeded in your mission, but at least you're alive...<br />
+&lt;&lt;endif&gt;&gt;
+</code></blockquote>

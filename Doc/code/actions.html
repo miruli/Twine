@@ -1,0 +1,68 @@
+<p>
+Suppose you're writing a passage like this:
+</p>
+
+<blockquote>
+
+<p>
+The door opens into a narrow sloping corridor which leads into another chamber. The walls are covered with hieroglyphics, and there are three clay pots standing on top of a stone table. Will you:
+</p>
+
+<p>
+Lift the lid of the white pot?<span style="float: right">Turn to <b>14</b></span><br clear="both" />
+Lift the lid of the black pot?<span style="float: right">Turn to <b>156</b></span><br clear="both" />
+Lift the lid of the red pot?<span style="float: right">Turn to <b>183</b></span><br clear="both" />
+Walk through the chamber to the archway in the far wall?<span style="float: right">Turn to <b>20</b></span><br clear="both" />
+</p>
+
+</blockquote>
+
+<p class="source">
+(Ian Livingstone, <cite>Temple of Terror</cite>)
+</p>
+
+<p>
+Lifting the lid of one pot shouldn't preclude the protagonist from lifting the lid of another afterwards &mdash; assuming, of course, that the pots don't kill the protagonist (which, unfortunately, they often do in these kinds of gamebooks). The <code>&lt;&lt;actions&gt;&gt;</code> macro shows the reader a list of choices, <b>excluding any he has already seen.</b> You can combine this with the <code>&lt;&lt;display&gt;&gt;</code> macro to implement the passage above:
+</p>
+
+<blockquote>
+
+<p><code>
+<b>Pot Chamber</b><br />
+The door opens into a narrow sloping corridor which leads into another chamber. The walls are covered with hieroglyphics, and there are three clay pots standing on top of a stone table.<br />
+&lt;&lt;display "Pot actions"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Pot actions</b><br />
+&lt;&lt;actions "Lift the lid of the white pot" "Lift the lid of the black pot" "Lift the lid of the red pot" "Walk to the archway"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Lift the lid of the white pot</b><br />
+There are chocolates inside! And they're delicious.<br />
+&lt;&lt;display "Pot actions"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Lift the lid of the black pot</b><br />
+There's licorice inside. You've never been that much of a fan, but maybe someone you encounter on your quest will like them.<br />
+&lt;&lt;display "Pot actions"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Lift the lid of the red pot</b><br />
+It's empty! Looks like someone got here before you did.<br />
+&lt;&lt;display "Pot actions"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Walk to the archway</b><br />
+You continue on your brave quest...
+</code></p>
+
+</blockquote>
+
+<p>
+The reader can open one, none, or several pots in the room before proceeding onward. Make sure you have at least one choice that does not lead back to the <code>&lt;&lt;actions&gt;&gt;</code> macro. Otherwise, readers won't be able to continue.
+</p>

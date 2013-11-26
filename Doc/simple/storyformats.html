@@ -1,0 +1,68 @@
+<p>
+There are two main story templates available to you: Jonah and Sugarcane. The examples in this documentation
+use Jonah formatting for simplicity's sake. In a Jonah-formatted story, each new passage appears below the one
+that contained the link to it, so that a reader can see the entire story by scrolling up and down. A reader
+can "rewind" the progress of the story by clicking the <i>Rewind to Here</i> link beside each passage's heading.
+This format is sometimes referred to as <b>stretchtext</b>, for the way the story seems to grow in place in
+response to the reader's clicks.
+</p>
+
+<p>
+The Sugarcane template only shows the most recent passage to a reader. It's like reading a printed
+gamebook, where only the most current passage is visible to the reader. Readers can jump back to a previous point
+in the story by using their browser's back button, or by choosing from the <b>Rewind</b> link that appears on the
+left side of every page. This link works differently from the back button: it lets readers jump to major decision
+points in your story, which you choose.
+</p>
+
+<p>
+To make a passage appear in Sugarcane's Rewind menu, you'll need to use the bookmark <b>tag</b>. Tags are also
+used to <a href="customizing/appearance.html">customize your story's appearance and behavior</a>; they act like
+extra labels for a passage so that it is treated specially. Here's how you add the bookmark tag to a passage in
+your source code:
+</p>
+
+<blockquote>
+<code>
+:: Between A Rock And A Hard Place [bookmark]<br />
+Well, what will it be? The [[rock]] or the [[hard place]]?
+</code>
+</blockquote>
+
+<p>
+When a reader encounters a passage like this, it is automatically added to the Rewind menu.
+</p>
+
+<p>
+The final trick to using the Sugarcane template is guiding readers out of dead ends. Sometimes you create
+a passage where the only action a reader can take is to go back to the previous one &mdash; for example, if
+it is just to add a little extra detail. While readers can use their back button to get back onto the main
+thread of the story, it's helpful to let them know that there isn't any way to go forward from a passage by
+placing a "Back" link into the text of a passage.
+</p>
+
+<p>
+There's a special shortcut that makes these easy to create. Simply type <code>&lt;&lt;back&gt;&gt;</code>
+at the end of your passage's source code, and Sugarcane will create a link labeled "Back" for you there. If you
+would like the "Back" link to point to a specific passage &mdash; for example, to allow the reader to skip back
+up to a top level &mdash; put its name in quotation marks like this:
+</p>
+
+<blockquote>
+<code>
+:: You're done!<br />
+You've completed chapter 17, on the properties of boron. Congratulations on muddling on through.<br />
+<br />
+&lt;&lt;back "Table of Contents"&gt;&gt;</code> 
+</blockquote>
+
+<p class="info">
+This is an example of <a href="code/why.html">a macro</a>. Macros are covered later in this document, but
+you don't need to worry about it 
+</p>
+
+<p>
+Finally, the two templates use different color schemes, but you can easily
+<a href="customizing/appearance.html">modify them</a>. To switch between them, use the <b>Story Format</b> menu in
+Tweebox, or the <code>-t</code> switch in <i>twee</i>.
+</p>

@@ -1,0 +1,32 @@
+<p>
+It's possible to write your own macros for use in your stories. Doing so will require knowledge of both
+JavaScript and the <a href="http://gimcrackd.com/etc/api/">Twee API</a>, but fortunately, Twee macros are
+written in almost the same format as TiddlyWiki ones. The
+<a href="http://tiddlywiki.org/wiki/Dev:Custom_Macros">Tiddlywiki.org</a> documentation can be very useful.
+</p>
+
+<p class="caution">
+TiddlyWiki macros extend the <code>config.macros</code> object; <b>Twee macros extend an object named <code>macros</code> directly</b>. This is the only difference in how macros are created.
+</p>
+
+<p>
+Here's an example passage that creates a macro named <code>&lt;&lt;hello&gt;&gt;</code> that, when invoked in another passage, displays an alert that greets the reader.
+</p>
+
+<blockquote><code><pre>
+<b>Hello macro</b>
+macros['hello'] =
+{
+	handler: function()
+	{
+		alert('Hi, reader!');	
+	}
+}
+
+<b>Start</b>
+&lt;&lt;hello&gt;&gt;
+</pre></code></blockquote>
+
+<p>
+If you're curious how a built-in macro works, browsing the <a href="http://code.google.com/p/twee/source/browse/#svn/trunk">source code repository</a> may be helpful, too.
+</p>

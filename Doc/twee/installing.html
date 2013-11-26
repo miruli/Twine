@@ -1,0 +1,44 @@
+<p> 
+<i>twee</i>, the command-line Twee compiler, requires Python. If you are using a Unix-based system like OS X
+or Linux, you don't need to worry about this requirement; Python should already be installed on your computer.
+Windows users can get Python <a href="http://www.python.org/download/releases/">here</a>.
+</p> 
+ 
+<p> 
+On Unix-based systems, you can make the command-line tools available to you by placing the entire extracted
+directory (including the <b>lib</b> and <b>targets</b> directories) into your PATH. If you use the <i>bash</i>
+shell, for example, you might put something like this in <code>.bashrc</code>:
+</p> 
+ 
+<blockquote><code> 
+export PATH=$PATH:/home/useraccount/twee
+</code></blockquote> 
+ 
+<p> 
+You can then run <i>twee</i> directly from the command prompt:
+</p> 
+ 
+<blockquote><code> 
+$ twee
+</code></blockquote> 
+ 
+<p> 
+On Windows, you can't run <i>twee</i> directly. Instead, you'll need to run the <i>python</i> interpreter on
+<i>twee</i> like so:
+</p> 
+ 
+<blockquote><code> 
+> python twee
+</code></blockquote>
+ 
+<p> 
+If things are set up properly, running <i>twee</i> without any further input should produce this message:
+</p> 
+ 
+<blockquote><code> 
+twee: no source files specified
+</code></blockquote> 
+
+<p>
+If you see this message, then you have installed <i>twee</i> correctly.
+</p>

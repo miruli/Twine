@@ -1,0 +1,52 @@
+
+
+<h2>Your Second Passage</h2>
+
+<p>
+In theory, you could just keep typing the rest of the story in that Start passage. But hypertext is all about the click, the bridge between. Let's allow the reader to look at the newspaper in their hand. Add this passage so your source text looks like this:
+</p>
+
+<p class="code">
+:: Start<br />
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing the newspaper.<br />
+<br />
+<br />
+:: the newspaper<br />
+If you believe what you read, the world is quiet. The London Times' front page is awash in some lurid tale of a fellow named John Lee whose execution failed thrice, and thus proven innocent -- or at least innocent enough to serve a life sentence. 
+</p>
+
+<p>
+It's a good idea to put at least two empty lines between passages so that you can pick them out easily. But you can put in as many empty lines as you like.
+</p>
+
+<p>
+Now that you've changed your source text, you can rebuild the story by clicking the <b>Build</b> button again in Tweebox. Once you've set up a project, you don't need to change any settings over again.
+
+<p>
+If you do this, you'll notice the resulting story looks the same as before. Even though we now have two passages, we have to link them together. Let's change our first passage so it reads:
+</p>
+
+<p class="code">
+:: Start<br />
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper]].
+</p>
+
+<p>
+Notice the double-brackets. This creates a link to a passage named <b>the newspaper</b>. The names have to match exactly -- so if we had written a passage named <b>THE NEWSPAPER</b>, or even <b>The newspaper</b>, we would get an error instead. Broken links have a pink background when you're viewing your story, and show this message when they're clicked:
+</p>
+
+<p align="center">
+<i>The passage 'The newspaper' doesn't exist.</i>
+</p>
+
+<p>
+Now that we have a link between the passages, try building your project again. You should be able to click between them now.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('firstpassage')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('firstpassage')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('otherlinks')">Next</a> <a href="javascript:void(0)" onclick="showPage('otherlinks')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

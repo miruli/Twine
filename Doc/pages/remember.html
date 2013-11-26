@@ -1,0 +1,49 @@
+<h2>The &lt;&lt;remember&gt;&gt; Macro</h2>
+
+<p>
+So you know how to remember values for later in the story with <code>&lt;&lt;set&gt;&gt;</code>. This memory only lasts as long as your reader has the story open, though, which makes sense for most things &mdash; but wouldn't it be nice if you could remember things across story sessions? You could even have high scores for your story. How weird would that be?
+</p>
+
+<p>
+There's a macro called <code>&lt;&lt;remember&gt;&gt;</code> just for this purpose. It works exactly like <code>&lt;&lt;set&gt;&gt;</code>, only that whatever variable you assign a value to gets saved for later. When your story is restarted, the variable will get reconstituted with the old value.
+</p>
+
+<p>
+It's important to keep in mind that <code>&lt;&lt;remember&gt;&gt;</code> only acts as a snapshot. Each time you want to change the saved value of a variable, you must use <code>&lt;&lt;remember&gt;&gt;</code>. <code>&lt;&lt;set&gt;&gt;</code> only makes changes temporarily.
+</p>
+
+<p>
+Here's a basic example of how to use <code>&lt;&lt;remember&gt;&gt;</code>. We give the protagonist a sense of deja vu if they've seen this particular ending before:
+</p>
+
+<p class="code">
+:: You've been shot<br />
+You clutch at your chest. It feels as though you can barely breathe -- and then you can't at all.&lt;&lt;if $shot&gt;&gt; You feel an awful sense of deja vu as your feet crumble from beneath you, as if you had made this same mistake before...&lt;&lt;endif&gt;&gt;&lt;&lt;remember $shot = true&gt;&gt;
+</p>
+
+<p>
+If you want to save the current state of a variable, you can just say <code>&lt;&lt;remember $variable&gt;&gt;</code> by itself.
+</p>
+
+<p>
+<code>&lt;&lt;remember&gt;&gt;</code> works by saving something called a <i>cookie</i> to the reader's Web browser. You don't have to worry about the technical details, except to remember that some people might have cookies turned off, so you need to either warn them about it, or accomodate that somehow in your story's logic.
+</p>
+
+<p class="developer">
+The <code>&lt;&lt;set&gt;&gt;</code> macro is more forgiving in terms of syntax; technically, you don't have to perform an assignment with it. <code>&lt;&lt;remember&gt;&gt;</code> is more strict. It looks for a variable on the left side of the expression; if it doesn't find one, bad things happen.<br />
+<br />
+<code>&lt;&lt;remember&gt;&gt;</code> prefixes all variables with a shortened version of your story's name and subtitle in the cookie, to ensure that you don't overwrite another story's remembered variables by accident. These cookies are set to last one year.<br /><br />
+</p>
+
+<p class="developer">
+<code>&lt;&lt;remember&gt;&gt;</code> cannot remember complex variable types like arrays or objects. (These two concepts haven't been discussed in this documentation, but you may be tempted to try it if you already know JavaScript.) Specifically, it only with numbers, strings, and booleans. An error message is shown instead.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('logic')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('logic')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('silently')">Next</a> <a href="javascript:void(0)" onclick="showPage('silently')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>
+

@@ -1,0 +1,87 @@
+
+<h2>Special Passages</h2>
+
+<p>
+There are only so many good stories you can write titled <i>Untitled Story</i>. It turns out there are a couple passages with special names that Jonah looks for. The first is called <code>StoryTitle</code>. It's what appears as your story's title.
+</p>
+
+<p class="code">
+:: StoryTitle<br />
+Murder on the Orient Express
+</p>
+
+<p>
+Try adding this passage to your <code>orient.tw</code> file and rebuilding the story. It should now look like this:
+</p>
+
+<p align="center">
+<img src="../img/orient2.png" width="450" height="276" alt="Screenshot" />
+</p>
+
+<p>
+Likewise, the <code>StorySubtitle</code> and <code>StoryAuthor</code> passages control the subtitle and byline that appears at the top of the story. Because these are passages just like any other, you can add links and format them however you wish:
+</p>
+
+<p class="code">
+:: StorySubtitle<br />
+probably not a copyright infringement //per se//<br />
+<br />
+<br />
+:: StoryAuthor<br />
+by [[P.F. Wossname|mailto:nobody@all.com]]
+</p>
+
+<p>
+You may want one or more of these items to not be displayed at all. You can do this by putting in an empty passage:
+</p>
+
+<p class="code">
+:: StorySubtitle<br />
+<br />
+<br />
+:: StoryAuthor<br />
+by [[P.F. Wossname|mailto:nobody@all.com]]
+</p>
+
+<p>
+In this example, no subtitle will be shown for this story.
+</p>
+
+<p>
+There are two other special passages that control what readers see when the story is first loaded. The first is <code>StartPassages</code>. Every passage linked to by that passage will be shown when the story is first loaded. That means we can go with a more interesting title for our first passage than <code>Start</code>. You could also open up several passages at the start of the story &mdash; maybe there are several plotlines happening at once, or different timelines.
+</p>
+
+<p class="code">
+:: 3 o'clock in the morning once more<br />
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing the newspaper.<br />
+<br />
+<br />
+:: StartPassages<br />
+[[3 o'clock in the morning once more]]]
+</p>
+
+<p>
+Finally, the <code>StoryMenu</code> passage lets you add items to the the menu that hovers in the upper-right corner of the page. You can't get rid of the <code>Restart Story</code> link, but you could add something like this:
+</p>
+
+<p class="code">
+:: About the Author<br />
+P.F. Wossname is a pseudonym used in this example. He or she currently resides in Walla Walla, Washington.
+<br />
+<br />
+:: StoryMenu<br />
+[[About the Author]]<br />
+[[See Some Cool Pictures|http://flickr.com/]]<br />
+</p>
+
+<p>
+Line breaks are important to the menu. It tries to stretch to accomodate your text, but if you try to stuff too much in, it'll overwrite the body of your story and look ugly.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('formatting')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('formatting')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('skippingaround')">Next</a> <a href="javascript:void(0)" onclick="showPage('skippingaround')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

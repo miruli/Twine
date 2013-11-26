@@ -1,0 +1,111 @@
+<p>
+Sometimes you'd like two diverging branches of a story to merge back into one. You can already do this with a well-placed link, but you can make the transition seamless with the <code>&lt;&lt;display&gt;&gt;</code> macro. Consider this source code, which paraphrases one of the first scenes of <cite>The Hitchhiker's Guide to the Galaxy</cite>:
+</p>
+
+<blockquote>
+
+<p><code>
+<b>The world is ending</b><br />
+The world is about to end -- something about construction of a bypass? -- and you only have time to buy one thing at the pub.<br />
+* &lt;&lt;choice "Buy another beer"&gt;&gt;<br />
+* &lt;&lt;choice "Buy a sandwich"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Buy another beer</b><br />
+Ford had said something about muscle relaxant, and you decide to take him at his word.<br />
+<br />
+&lt;&lt;display 'Vogons begin'&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Buy a sandwich</b><br />
+For some odd reason you've been craving a cheese sandwich all day, and it looks like you won't have a chance to have one anytime soon.<br />
+<br />
+&lt;&lt;display 'Vogons begin'&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Vogons begin</b><br />
+You hear a great rumbling from outside, and rush outside to see what's going on...
+</code></p>
+
+</blockquote>
+
+<p>
+No matter what the reader chooses, the passage "Vogons begin" will be displayed after the text. The <code>&lt;&lt;display&gt;&gt;</code> macro uses the same syntax as the <code>&lt;&lt;choice&gt;&gt;</code> one does.
+</p>
+
+<p>
+This example isn't particularly interesting, of course, but you could use <code>&lt;&lt;display&gt;&gt;</code> to merge together several diverging story threads. You can also do clever things like this:
+</p>
+
+<blockquote>
+
+<p><code>
+<b>Yellow Submarine</b><br />
+In the town where I was born,<br />
+Lived a man who sailed the sea,<br />
+And he told us of his life,<br />
+In the land of submarines.<br />
+So we sailed on to the sun,<br />
+Till we found the sea of green,<br />
+And we lived beneath the waves,<br />
+In our yellow submarine.
+</code></p>
+
+<p><code>
+&lt;&lt;display "Chorus"&gt;&gt;
+</code></p>
+
+<p><code>
+And our friends are all aboard,<br />
+Many more of them live next door,<br />
+And the band begins to play.
+</code></p>
+
+<p><code>
+&lt;&lt;display "Chorus"&gt;&gt;
+</code></p>
+
+<p><code>
+As we live a life of ease,<br />
+Everyone of us has all we need,<br />
+Sky of blue and sea of green,<br />
+In our yellow submarine.
+</code></p>
+
+<p><code>
+&lt;&lt;display "Chorus"&gt;&gt;
+</code></p>
+
+<p><code>
+<b>Chorus</b><br />
+We all live in a yellow submarine,<br />
+Yellow submarine, yellow submarine.<br />
+We all live in a yellow submarine,<br />
+Yellow submarine, yellow submarine.
+</code></p>
+
+</blockquote>
+
+<p>
+This displays the entire lyrics to the Beatles's "Yellow Submarine."
+</p>
+
+<div class="caution">
+
+<p>
+<b>It is possible to lock up a reader's Web browser</b> by using the <code>&lt;&lt;display&gt;&gt;</code> macro improperly, like this:
+</p>
+
+<blockquote><code>
+:: Oops<br />
+&lt;&lt;display "Oops"&gt;&gt;
+</code></blockquote>
+
+<p>
+When displayed, the passage will keep attempting to display itself over and over until the reader force quits his Web browser. This doesn't do permanent damage, but it will not endear yourself to your reader.
+</p>
+
+</div>

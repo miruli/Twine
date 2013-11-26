@@ -1,0 +1,112 @@
+<p>
+If you'd like to change the colors, typeface, or other parts of your story's visual appearance, you may
+do so with a technology called Cascading Style Sheets (CSS).
+</p>
+
+<p>
+You can add style rules to your story by adding passages with the <code>stylesheet</code> tag</b>.
+When a story is first loaded, all passages tagged <code>stylesheet</code> are added as CSS rules.
+Tags are case-sensitive, so tagging a passage <b>Stylesheet</b> or <b>STYLESHEET</b> will have no effect.
+Also, there is no guaranteed order in which rules are added, so conflicting rules will produce unpredictable results. 
+</p>
+
+<p>
+Here are some useful CSS selectors. There are DOM inspectors for most major browsers that can also help you develop rules that produce the results you're looking for.
+</p>
+
+<table>
+
+<tr>
+<th>Selector</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><code>body</code></td>
+<td>Affects everything displayed &mdash; a great place to change the typeface for the entire page.</td>
+</tr>
+
+<tr>
+<td><code>#floater</code></td>
+<td>The story menu in the upper-right corner of the page.</td>
+</tr>
+
+<tr>
+<td><code>h1</code></td>
+<td>The story's title.</td>
+</tr>
+
+<tr>
+<td><code>h2</code></td>
+<td>The story's subtitle.</td>
+</tr>
+
+<tr>
+<td><code>h3</code></td>
+<td>The story's author.</td>
+</tr>
+
+<tr>
+<td><code>#passages</code></td>
+<td>A container for all passages displayed on the page.</td>
+</tr>
+
+<tr>
+<td><code>.passage</code></td>
+<td>A single passage on the page.</td>
+</tr>
+
+<tr>
+<td><code>.passage .title</code></td>
+<td>A passage's title.</td>
+</tr>
+
+<tr>
+<td><code>.passage .toolbar</code></td>
+<td>A container for the <b>Bookmark</b> and <b>Rewind to Here</b> links for each passage.</td>
+</tr>
+
+<tr>
+<td><code>.passage .body</code></td>
+<td>A passage's body text.</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap"><code>.passage .body .internalLink</code></td>
+<td>A link to another passage in the story.</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap"><code>.passage .body .brokenLink</code></td>
+<td>A link that points to a nonexistent passage in the story.</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap"><code>.passage .body .externalLink</code></td>
+<td>A link that points to another Web page.</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap"><code>.passage .body .choice</code></td>
+<td>A link created through the <a href="code/choice.html"><code>&lt;&lt;choice&gt;&gt;</code> macro</a>.</td>
+</tr>
+
+<tr>
+<td nowrap="nowrap"><code>.passage .body .disabled</code></td>
+<td>A link created through the <a href="code/choice.html"><code>&lt;&lt;choice&gt;&gt;</code> macro</a> that is not longer available to the reader.</td>
+</tr>
+
+<tr>
+<td><code>#footer</code></td>
+<td>The footer at the bottom of the page (e.g. "This story was built with Twee and is powered by TiddlyWiki").</td>
+</tr>
+
+</table>
+
+<p>
+As an example, this passage hides all passage titles from view in the Jonah story format:
+</p>
+
+<blockquote><code>
+.passage .title { display: none }
+</code></blockquote>

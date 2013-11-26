@@ -1,0 +1,93 @@
+<p>
+Sometimes you'd like to apply styles to your text &mdash; to italicize a book title, for example. You can do
+this with simple formatting codes that are similar to the double brackets of a link. Here is what's available
+to you:
+</p>
+
+<table>
+
+<tr>
+<th>Formatting</th>
+<th>Source Code</th>
+<th>Appears As</th>
+</tr>
+
+<tr>
+<td>Italics</td>
+<td><code>//text//</code></td>
+<td><i>text</i></td>
+</tr>
+
+<tr>
+<td>Boldface</td>
+<td><code>''text''</code></td>
+<td><b>text</b></td>
+</tr>
+
+<tr>
+<td>Underline</td>
+<td><code>__text__</code></td>
+<td><u>text</u></td>
+</tr>
+
+<tr>
+<td>Subscript</td>
+<td><code>H~~2~~O</code></td>
+<td>H<sub>2</sub>O</td>
+</tr>
+
+<tr>
+<td>Superscript</td>
+<td><code>meters/second^^2^^</code></td>
+<td>meters/second<sup>2</sup></td>
+</tr>
+
+<tr>
+<td>Monospace</td>
+<td><code>{{{text}}}</code></td>
+<td><code>text</code></td>
+</tr>
+
+<tr>
+<td>Bulleted list</td>
+<td><code>* one<br />* two<br /></code></td>
+<td><ul><li>one</li><li>two</li></ul></td>
+</tr>
+
+<tr>
+<td>Numbered list</td>
+<td><code># one<br /># two</code></td>
+<td><ol><li>one</li><li>two</li></ol></td>
+</tr>
+
+<tr>
+<td>Horizontal line</td>
+<td><code>----</code></td>
+<td><hr /></td>
+</tr>
+
+</table>
+
+<p>
+Lists in particular are useful for setting off choices at the end of a passage. Although it feels natural to
+leave an empty line between a paragraph and a list, this creates extra whitespace that looks a little strange.
+Here's what it should look like:
+</p>
+
+<blockquote><code>
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper|The London Times]].<br />
+<br />
+You hear the door to the car open behind you.<br />
+* [[Look up]]<br />
+* [[Continue reading]]<br />
+</code></blockquote>
+
+<p>
+If there's a particular kind of formatting that you'd like to use that isn't supported natively by Twee, you
+can put HTML source code directly into your story's text by surrounding it with <code>&lt;html&gt;</code> and
+<code>&lt;/html&gt;</code>. This passage, for example, blinks:
+</p>
+
+<blockquote><code>
+The bomb's timer now reads: &lt;html&gt;&lt;blink&gt;5:00&lt;/blink&gt;&lt;/html&gt;. You sure hope that's five hours, not five minutes.
+</code></blockquote>

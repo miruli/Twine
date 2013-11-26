@@ -1,0 +1,42 @@
+<p>
+Just as you can tag a passage <code>stylesheet</code> to have its contents treated as CSS style rules,
+you can use the <b>script</b> tag to include custom JavaScript in your story. All passages with this tag
+are executed when the page loads, which you can use as an opportunity to do two things:
+</p>
+
+<ul>
+
+<li>
+<b>Perform some initialization.</b> This passage asks readers what their names are when they first open the story:
+
+<blockquote><code>
+prompt("Hi! What's your name?");
+</code></blockquote>
+
+This example is not particularly useful, but if you are integrating extra JavaScript code into your story, this can be a useful way to do some initialization.
+
+</li>
+
+<li>
+<b>Modify how your story will work.</b> To do this properly requires careful inspection of the <a href="http://gimcrackd.com/etc/api/">Twee API</a>,
+which is outside the scope of this document. As an example, however, this passage forces only one passage to be displayed at a time in the Jonah story template:
+
+<blockquote><code><pre>
+History.prototype.originalDisplay = History.prototype.display;
+
+History.prototype.display = function (title, link, render)
+{
+	if ((render != 'quietly') && (render != 'offscreen'))
+		removeChildren($('passages'));
+		
+	this.originalDisplay.apply(this, arguments);
+};
+</pre></code></blockquote>
+
+</li>
+
+</ul>
+
+<p class="caution">
+The execution order of passages tagged <b>script</b> is not guaranteed.
+</p>

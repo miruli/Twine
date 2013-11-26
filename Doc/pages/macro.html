@@ -1,0 +1,52 @@
+
+
+<h2>What's a Macro?</h2>
+
+<p>
+If you think about it, we take lots of shortcuts when we talk about what we do. For example, I could tell you, "I got dressed this morning." But if I felt more exact, I'd say, "Well, first I decided on the shirt I wanted to wear. Then I picked out pants and a belt to match it, and found some clean underwear and socks. Then I put on my underwear and socks, then my shirt, then my pants, and then finally I put on my belt."
+</p>
+
+<p>
+Of course, if I actually talked like this, nobody would be my friend &mdash; because that's really boring. Nobody cares about details like this!
+</p>
+
+<p>
+That's what a macro is: a shorthand for a lot of steps that nobody really cares about (except when they go wrong &mdash; if I forgot to put on my pants, for example). Macros do some behind-the-scenes magic to do extraordinary things in your stories. You don't need to worry about how they do it, just like you don't really care how I got dressed this morning.
+</p>
+
+<p>
+You invoke a macro like this:
+</p>
+
+<p class="code">
+:: Example<br />
+&lt;&lt;test 3&gt;&gt;
+</p>
+
+<p>
+In this example, we're calling the macro named <i>test</i> and telling it the number 3. You can change how a macro behaves by passing it different kinds of information. Here the number 3 might tell the macro to beep three times. Or maybe that's how many stars you want to rate a movie, or anything else at all -- the meaning of the parameters, as they're called, is particular to each macro.
+</p>
+
+<p>
+A macro has to be embedded in a tiddler to work, and you have to make sure it's in the right case, just as you do when you link to a tiddler. The second part isn't so hard to remember, though, because all the ones we're going to talk about are all lowercase. A macro only springs into action when the tiddler is first displayed. If a reader somehow closes a tiddler and re-opens it, its macros are re-invoked. Jonah tries its best to prevent this from happening, but this is important to remember.
+</p>
+
+<p>
+Jonah comes with a set of macros especially useful for Choose-Your-Own-Adventure kinds of stories. If you create a plain vanilla TiddlyWiki from your source files, you may run into problems because the macros aren't defined there.
+</p>
+
+<p>
+People all over the Internet have written macros for TiddlyWiki. If you find something you'd like to use in your story, you can easily include it. Just copy its source code into a tiddler that's tagged <b>systemConfig</b>. Tiddlers with this tag are executed when the page is first loaded in a reader's browser.
+</p>
+
+<p class="developer">
+You can write your own macros, actually. There isn't a whole lot of documentation out there on how it works, and honestly you'll have to grovel over the TiddlyWiki source code to understand how to tie into its API. Two good starting points are Simon Baird's <a href="http://mptw.tiddlyspot.com/#HelloWorldMacro">Hello World</a> macro, which is a simple example of how macros are written, and <a href="http://trac.tiddlywiki.org/tiddlywiki" target="_blank">Tiddlywiki.org</a>, where the TiddlyWiki source now lives. Beware -- Jonah is based on an earlier version of TiddlyWiki (1.2.39 to be exact), so not everything is the same.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('tricksintro')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('tricksintro')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('tiddlermacro')">Next</a> <a href="javascript:void(0)" onclick="showPage('tiddlermacro')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

@@ -1,0 +1,41 @@
+<p> 
+The basic format of a <i>twee</i> compilation command is very simple, and doesn't differ across platforms.
+</p> 
+ 
+<blockquote><code> 
+twee sourcefile<i> sourcefile2 sourcefile3...</i> &gt; output.html
+</code></blockquote> 
+ 
+<p> 
+You pass it a list of files with source code, and direct its output into an HTML page.
+There are a few optional switches:
+</p> 
+ 
+<table> 
+ 
+<tr> 
+<th>Switch</th> 
+<th>Description</th> 
+<th>Example</th> 
+</tr> 
+ 
+<tr> 
+<td><b>-m</b></td> 
+<td>Merges changes with an already existing HTML file.</td> 
+<td><code>twee -m oldfile.html mysource.tw &gt; newfile.html</td> 
+</tr> 
+ 
+<tr> 
+<td><b>-r</b></td> 
+<td>When coupled with the <b>-m</b> switch, generates an RSS file of recently changed passages.</td> 
+<td><code>twee -m oldfile.html -r rss.xml mysource.tw &gt; newfile.html</td> 
+</tr> 
+ 
+<tr> 
+<td><b>-t</b></td> 
+<td>Targets a different platform when creating the output file. If omitted, this targets <i>sugarcane</i>. Other
+available targets are <i>jonah</i>, <i>tw</i> (TiddlyWiki 1) and <i>tw2</i> (TiddlyWiki 2.2).</td> 
+<td><code>twee -t tw2 mysource.tw &gt; tiddlywiki.html</td> 
+</tr> 
+ 
+</table>

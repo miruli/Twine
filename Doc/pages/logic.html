@@ -1,0 +1,157 @@
+
+
+<h2>Logical Expressions</h2>
+
+<p>
+So we now know enough to be able to show parts of a tiddler based on the contents of a variable that holds a truth value. But what if we want to show a choice if the main character doesn't have an empty gun? 
+</p>
+
+<p class="code">
+:: A showdown<br />
+&lt;&lt;if $bullets gt 0&gt;&gt;<br />
+<br />
+&lt;&lt;Fire the gun&gt;&gt;<br />
+<br />
+&lt;&lt;endif&gt;&gt;<br />
+</p>
+
+<p>
+There are a whole bunch of logical operators you can use to compare values, ending up with a truth value:
+</p>
+
+<table>
+
+<tr>
+<td>
+eq
+</td>
+<td>
+Evaluates to true if both sides are equal.
+</td>
+<td>
+<code>$bullets eq 5</code>
+</td>
+</tr>
+
+<tr>
+<td>
+neq
+</td>
+<td>
+Evaluates to true if both sides are not equal.
+</td>
+<td>
+<code>$friends neq $enemies</code>
+</td>
+</tr>
+
+
+<tr>
+<td>
+gt
+</td>
+<td>
+Evaluates to true if the left side is greater than the right side.
+</td>
+<td>
+<code>$money gt 3.75</code>
+</td>
+</tr>
+
+<tr>
+<td>
+gte
+</td>
+<td>
+Evaluates to true if the left side is greater than or equal to the right side.
+</td>
+<td>
+<code>$apples gte $carrots + 5</code>
+</td>
+</tr>
+
+<tr>
+<td>
+lt
+</td>
+<td>
+Evaluates to true if the left side is less than the right side.
+</td>
+<td>
+<code>$shoes lt $people * 2</code>
+</td>
+</tr>
+
+<tr>
+<td>
+lte
+</td>
+<td>
+Evaluates to true if the left side is less than or equal to the right side.
+</td>
+<td>
+<code>65 lte $age</code>
+</td>
+</tr>
+
+<tr>
+<td>
+and
+</td>
+<td>
+Evaluates to true if both sides evaluates to true.
+</td>
+<td>
+<code>$hasFriends and $hasFamily</code>
+</td>
+</tr>
+
+<tr>
+<td>
+or
+</td>
+<td>
+Evaluates to true if either side is true.
+</td>
+<td>
+<code>$boy or $girl</code>
+</td>
+</tr>
+
+<tr>
+<td>
+not
+</td>
+<td>
+Flips a true value to a false value, and vice versa.
+</td>
+<td>
+<code>(not $hungry) or ($location eq "restaurant")</code>
+</td>
+</tr>
+
+</table>
+
+<p>
+With these you can write out pretty complicated conditions. Parentheses are your friend here. They work exactly the same way they do in other kinds of expressions -- they force things to be evaluated in the order you want them to.
+</p>
+
+<p class="code">
+&lt;&lt;if ($walkingHome or ($sandwiches gt 7)) and (not $breathing)&gt;&gt;
+</p>
+
+<p>
+Remember that you can test these out with the Control-Alt-P shortcut at any point in your story.
+</p>
+
+<p class="developer">
+This section is probably confusing if you've used JavaScript before. The reason for all these new operators is that the &gt; character confuses TiddlyWiki's parser, so an equivalent needed to be created. The rest are simply there for the sake of parallelism, and also to cut down on the inevitable <code>=</code> vs. <code>==</code> confusion. You can still use <code>!=</code>, for example, if you want to.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('conditions')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('conditions')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('else')">Next</a> <a href="javascript:void(0)" onclick="showPage('else')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

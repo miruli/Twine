@@ -1,0 +1,126 @@
+
+
+<h2>Variables, &lt;&lt;set&gt;&gt;, and &lt;&lt;print&gt;&gt;</h2>
+
+<p>
+Expressions by themselves aren't much use to your stories. Unless you're writing a taut mathematical thriller, you probably don't need to evaluate <code>2 + 2</code> too often. Where they do come in handy, however, is when <i>variables</i> enter the picture.
+</p>
+
+<p>
+A variable is a place to store a value so that you can remember it later. You can store both strings and numbers in variables. The variable <code>$name</code> might contain the main character's name, "Agatha Christie", or the variable <code>$money</code> might contain the amount of money Agatha has in her pocket &mdash; the number 15.75.
+</p>
+
+<p>
+Variables have a few restrictions on their names. They must start with a dollar sign. That's called a <i>sigil</i> -- it tells the computer that what's coming next is a variable, not a number or string.
+</p>
+
+<p>
+Then you can have either a letter, uppercase or lowercase, or an underscore(_). After that point, you can have any combination of letters, numbers, or underscores. Punctuation and spaces aren't allowed anywhere.
+</p>
+
+<p>
+Here are some legitimate variable names:
+</p>
+
+<div class="code">
+
+<p class="column">
+$housesDestroyed<br />
+$_my_favorite_color<br />
+$AN_EXTREMELY_IMPORTANT_NUMBER
+</p>
+
+<p class="column">
+$street8<br />
+$i<br />
+$_<br />
+</p>
+
+<br clear="all" />
+
+</div>
+
+<p>
+Some bad variable names:
+</p>
+
+<div class="code">
+
+<p class="column">
+$what was it called<br />
+$Idon'tRemember<br />
+$3.95
+</p>
+
+<p class="column">
+I_Forgot_Something_Important<br />
+$8thSurprise<br />
+$$$make_money_fast$$$
+</p>
+
+<br clear="all" />
+
+</div>
+
+<p>
+Variables are a good way to keep track of what a reader's doing in the story. You can manipulate them with the <code>&lt;&lt;set&gt;&gt;</code> macro. Here's a really simple example:
+</p>
+
+<p class="code">
+&lt;&lt;set $sum = 2 + 2&gt;&gt;
+</p>
+
+<p>
+Recognize what's on the right side of that equals sign? Right. You can use any expression at all you want there, including one that uses another variable:
+</p>
+
+<p class="code">
+&lt;&lt;set $totalBullets = $guns * 6&gt;&gt;
+</p>
+
+<p>
+Pretty cool, huh? The first way you can make variables affect your story is through the <code>&lt;&lt;print&gt;&gt;</code> macro. It prints out an expression right inside a tiddler. Here's a simple example:
+</p>
+
+<p class="code">
+:: Counting the Bananas<br />
+&lt;&lt;set $bananas = 5&gt;&gt;You open up a crate of bananas and start counting.<br />
+<br />
+It doesn't take long to finish, though -- it's almost empty. There are &lt;&lt;print $bananas&gt;&gt; inside.
+</p>
+
+<p>
+I had to stick the <code>&lt;&lt;set&gt;&gt;</code> at the start of a paragraph, because otherwise you get extra blank lines in your tiddlers, which looks strange. Remember, <code>&lt;&lt;print&gt;&gt;</code> prints out any expression, so you could have just as easily written <code>&lt;&lt;print $bananas + 5&gt;&gt;</code> in the example above.
+</p>
+
+<p>
+If you ever want to test the value of an expression while you're in the middle of a story, hold down the Alt (Option on Macs) and Control keys and press the P key (for Print). You'll be prompted to enter an expression; an alert box appears afterwards with the results.
+</p>
+
+<p>
+You can also manually run a <code>&lt;&lt;set&gt;&gt;</code> macro with Alt-Control-S. You don't get any feedback from this once it completes, but you can always check it with Alt-Control-P.
+</p>
+
+<p class="opera">
+These keyboard shortcuts don't work in Opera. Sorry!
+</p>
+
+<p>
+You now have all the tools you need to start playing with variables in Twee. Experiment a little and see what's possible. If you make a mistake, a pink highlighted message will appear where you write your macro. Here's a sample error message, if you forget the sigil in front of a variable:
+</p>
+
+<p align="center">
+<span style="text-align: center; background-color: pink; color: black; font-weight: bold">bad expression: bananas is not defined</span>
+</p>
+
+<p class="developer">
+The <code>$</code> is actually converted to the string <code>config.macros['set'].store</code> before it is passed to the <code>eval</code> JavaScript function. That is, we stuff variables into an object so they don't go out of scope between macro invocations.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('expression')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('expression')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('conditions')">Next</a> <a href="javascript:void(0)" onclick="showPage('conditions')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

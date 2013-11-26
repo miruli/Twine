@@ -1,0 +1,54 @@
+<h2>The &lt;&lt;actions&gt;&gt; Macro</h2>
+
+<p>
+There may come a point in your story where you'd like to let the reader try several things. You don't really care what order they try them in, but you want to make sure that they only do each once. One obvious example of this is a bookshelf with a dictionary, a figurine, and a pack of cards sitting on it. You'd like to let the reader look at each of these, or maybe only one &mdash; it's up to them. You don't particularly care about the order in which the reader does this, however.
+</p>
+
+<p>
+This is where the <code>&lt;&lt;actions&gt;&gt;</code> macro comes in. You give it a list of tiddlers, and it displays them as a list of <code>&lt;&lt;choice&gt;&gt;</code>s. Only choices that haven't been clicked before are displayed.
+</p>
+
+<p>
+You can then use the <code>&lt;&lt;tiddler&gt;&gt;</code> macro to save yourself some typing. Here's that shelf example:
+</p>
+
+<p class="code">
+:: The shelf<br />
+The shelf is solid oak of a quality you have rarely seen elsewhere.<br />
+&lt;&lt;tiddler "(shelf actions)"&gt;&gt;<br />
+<br />
+<br />
+:: (shelf actions)<br />
+&lt;&lt;actions "Look at the dictionary" "Look at the figurine" "Look at the pack of cards"&gt;&gt;<br />
+<br />
+<br />
+:: Look at the dictionary<br />
+The __Oxford English Dictionary__, A-J. Your favorite reference.<br />
+&lt;&lt;tiddler "(shelf actions)"&gt;&gt;<br />
+<br />
+<br />
+:: Look at the figurine<br />
+It seems quite fragile.<br />
+&lt;&lt;tiddler "(shelf actions)"&gt;&gt;<br />
+<br />
+<br />
+:: Look at the pack of cards<br />
+Just an ordinary deck of cards upon first inspection.<br />
+&lt;&lt;tiddler "(shelf actions)"&gt;&gt;
+</p>
+
+<p>
+After choosing a particular action, the <code>&lt;&lt;tiddler&gt;&gt;</code> macro shows the remaining actions available to the reader. Obviously, you need a tiddler that doesn't take the reader back to this list of actions &mdash; otherwise they'll be trapped in that list, unable to get any further in the story. In this example, we might add a tiddler called <code>Move away from the bookshelf</code>.
+</p>
+
+<p class="developer">
+Actions are also classed <b>choice</b> in CSS, so you can change their formatting with the selector <code>a.choice</code>.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('choicemacro')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('choicemacro')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('expression')">Next</a> <a href="javascript:void(0)" onclick="showPage('expression')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

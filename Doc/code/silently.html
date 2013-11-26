@@ -1,0 +1,34 @@
+<p>
+In some cases, you'll want to do several things with macros at once. For example, in this passage from the previous section:
+</p>
+
+<blockquote>
+All you possess is an Axe (note under Weapons on your Action Chart) and a Backpack containing 1 Meal (note under Meals on your Action Chart).
+</blockquote>
+
+<p class="source">
+(Joe Dever, <cite>Flight from the Dark</cite>)
+</p>
+
+<p>
+You'd probably want to set both the protagonist's weapon and number of meals. You can do this without any extraneous whitespace appearing in your story by putting all the <code>&lt;&lt;set&gt;&gt;</code> statements on the same line:
+</p>
+
+<blockquote><code>
+All you possess is an Axe and a Backpack containing 1 Meal. &lt;&lt;set $meals = 1&gt;&gt; &lt;&lt;set $weapon = "axe"&gt;&gt;
+</code></blockquote>
+
+<p>
+This is not particularly readable, however. The <code>&lt;&lt;silently&gt;&gt;</code> macro can help in these situations, like so:
+</p>
+
+<blockquote><code>
+All you possess is an Axe and a Backpack containing 1 Meal. &lt;&lt;silently&gt;&gt;<br />
+&lt;&lt;set $meals = 1&gt;&gt;<br />
+&lt;&lt;set $weapon = "axe"&gt;&gt;<br />
+&lt;&lt;endsilently&gt;&gt;
+</code></blockquote>
+
+<p>
+Everything between <code>&lt;&lt;silently&gt;&gt;</code> and <code>&lt;&lt;endsilently&gt;&gt;</code> is run, but nothing is displayed.
+</p>

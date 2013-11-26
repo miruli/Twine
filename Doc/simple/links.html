@@ -1,0 +1,54 @@
+<p>
+Let's change our first passage so it reads:
+</p>
+
+<blockquote><code>
+:: Start<br />
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper]].
+<br />
+<br />
+You hear the door to the car open behind you, but you don't look up at first.
+</code></blockquote>
+
+<p>
+The double brackets around the phrase <b>the newspaper</b> creates a link to another passage. By default, the names must match exactly, so if we had written a passage named <b>THE NEWSPAPER</b>, or even <b>The newspaper</b>, we would run into problems. Broken links have a pink background when you're viewing your story, and show this message when they're clicked:
+</p>
+
+<p align="center">
+<i>The passage 'The newspaper' doesn't exist.</i>
+</p>
+
+<p>
+In some cases, you may not want to match names exactly. You can add a second part to your link to make passages fit together better:
+</p>
+
+<blockquote><code>
+:: Start<br />
+It's a dark and stormy night aboard the Orient Express. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper|The London Times]].<br />
+<br />
+You hear the door to the car open behind you, but you don't look up at first.<br />
+<br />
+:: The London Times<br />
+If you believe what you read, the world is quiet. The London Times' front page is awash in some lurid tale of a fellow named John Lee whose execution failed thrice, and thus proven innocent -- or at least innocent enough to serve a life sentence.
+</code></blockquote>
+
+<p>
+<b>The <code>|</code> character (sometimes called a pipe) acts as a separator</b> between the text to display and the passage to link to. It can be easy to forget the order of these two things; one way to remember it is to say to yourself, "<i>This</i> text links to <i>this</i> passage."
+</p>
+
+<p>
+You can also use a pipe character to link to an external Web page. For example, if we wanted to link to the Wikipedia article on John Lee, we could rewrite the newspaper passage to read: 
+</p>
+
+<blockquote><code>
+:: The London Times<br />
+If you believe what you read, the world is quiet. The London Times' front page is awash in some lurid tale of a fellow named [[John Lee|http://en.wikipedia.org/wiki/John_%27Babbacombe%27_Lee]] whose execution failed thrice, and thus proven innocent -- or at least innocent enough to serve a life sentence.
+</code></blockquote>
+
+<p>
+You can use any kind of address that a Web browser would understand. For example, if you wanted to create a link that let your readers email you, you could write <code>[[Contact me|mailto:my@email.address]]</code>.
+</p>
+
+<p>
+Now that we've added some links to our story, try compiling your source code again. You should be able to click between them now, and the <b>Bookmark</b> and <b>Rewind to Here</b> links on each passage should have noticeable effects.
+</p>

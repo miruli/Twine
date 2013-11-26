@@ -1,0 +1,63 @@
+<p>
+Sometimes you'd like to apply styles to your text. For example, the passage about the newspaper would 
+
+Some days, plain text just isn't enough. For example, in that newspaper passage we wrote in the last section, it sure would be nice to be able to italicize the name of the <i>London Times</i>. We can do that by surrounding the text with <code>//</code>s, like so:
+</p>
+
+<p class="code">
+:: the newspaper<br />
+If you believe what you read, the world is quiet. //The London Times'// front page is awash in some lurid tale of a fellow named John Lee whose execution failed thrice, and thus proven innocent -- or at least innocent enough to serve a life sentence. 
+</p>
+
+<p>
+Likewise, you can make text bold by putting double apostrophes around it, <code>''like this''</code>, and you can underline text by putting two underscores around it, <code>__like this__</code>. There's a full list of formatting options <a href="http://tiddlywiki.com/#ExtendedFormatting" target="_blank">here</a>.
+</p>
+
+<p>
+You can create lists by putting either a * or # at the beginning of a line. One use of this is to list actions a reader can take at the end of a passage, like so:
+</p>
+
+<p class="code">
+:: Start<br />
+It's a dark and stormy night aboard the [[Orient Express|http://en.wikipedia.org/wiki/Orient_Express]]. You can't sleep; something about the motion of the train disturbed you subtly. So instead you have elected to spend the night in the dining car, sipping coffee and perusing [[the newspaper]].<br />
+<br />
+"Hello?" a female voice asks from behind you, perhaps from the entrance of the car.<br />
+* [[Turn around]]<br />
+* [[Keep reading]]
+</p>
+
+<p>
+Notice that there isn't an empty line between the start of the list and the paragraph before it. That's a little idiosyncrasy of the way things are displayed. If you compile this new passage, you'll see that there's exactly the right amount of space.
+</p>
+
+<p>
+Changing the font or other advanced tricks requires that you know at least a little CSS (a technology called Cascading Style Sheets), which is not something you pick up in a few minutes. Still, if you want to learn, <a href="http://www.w3.org/Style/Examples/011/firstcss" target="_blank">this</a> might be a good place to start. You can skip the parts that talk about HTML; you only need to know about the different CSS rules you can apply.
+</p>
+
+<p>
+If you already know enough CSS to get into trouble, the basic pattern is:
+</p>
+
+<p class="code">
+@@CSS rule;another rule; text@@
+</p>
+
+<p>
+So you could set some text in green Courier New by writing this:
+</p>
+
+<p class="code">
+@@font-family: "Courier New";color: green;This is not really the kind of thing that people would find attractive.@@
+</p>
+
+<p>
+It's important not to put spaces between the semicolons.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('secondpassage')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('secondpassage')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('specialpassages')">Next</a> <a href="javascript:void(0)" onclick="showPage('specialpassages')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

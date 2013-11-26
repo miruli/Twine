@@ -1,0 +1,114 @@
+<p>
+Expressions by themselves aren't much use to your stories. Unless you're writing a  mathematical thriller, you probably don't need to evaluate <code>2 + 2</code> too often. Where they do come in handy, however, is when <b>variables</b> enter the picture.
+</p>
+
+<p>
+A variable is a place to store a value so that you can remember it later. You can store both strings and numbers in variables. The variable <code>$name</code> might contain the main character's name, "Agatha Christie", or the variable <code>$money</code> might contain the amount of money Agatha has in her pocket &mdash; the number 15.75.
+</p>
+
+<p>
+Variables have a few restrictions on their names. They must start with a dollar sign. That's called a <b>sigil</b> &mdash; it tells the computer that what's coming next is a variable, not a number or string.
+</p>
+
+<p>
+After the initial dollar sign, a variable name can begin with a letter, either uppercase or lowercase, or an underscore (<code>_</code>). After the first letter, you can have any combination of letters, numbers, or underscores. Punctuation and spaces aren't allowed anywhere.
+</p>
+
+<p>
+Here are some legitimate variable names:
+</p>
+
+<blockquote><code>
+<p class="column">
+$housesDestroyed<br />
+$_my_favorite_color<br />
+$AN_EXTREMELY_IMPORTANT_NUMBER<br />
+$street8<br />
+$i<br />
+$_<br />
+</code></blockquote>
+
+<p>
+Some bad variable names:
+</p>
+
+<blockquote><code>
+$what was it called<br />
+$Idon'tRemember<br />
+$3.95<br />
+I_Forgot_Something_Important<br />
+$8thSurprise<br />
+$$$make_money_fast$$$
+</code></blockquote>
+
+<p>
+Variables are a good way to keep track of what a reader has chosen in a story, or to manage some other part of the story state. For example, many gamebooks start off with something like this:
+</p>
+
+<blockquote>
+All you possess is an Axe (note under Weapons on your Action Chart) and a Backpack containing 1 Meal (note under Meals on your Action Chart).
+</blockquote>
+
+<p class="source">
+(Joe Dever, <cite>Flight from the Dark</cite>)
+</p>
+
+<p>
+You can keep track of the number of meals that the protagonist carries with the <code>&lt;&lt;set&gt;&gt;</code> macro, like so:
+</p>
+
+<blockquote><code>
+All you possess is an Axe and a Backpack containing 1 Meal. &lt;&lt;set $meals = 1&gt;&gt;
+</code></blockquote>
+
+<p>
+The left side of the equals sign has a single variable, and the expression to set it to is on the right. It's on the same line as the real text of the story so that extra whitespace doesn't appear in the story text.
+</p>
+
+<p>
+Later on in the story, you can change the value of a variable with another &lt;&lt;set&gt;&gt; statement.
+</p>
+
+<blockquote><code>
+You are feeling tired and hungry and you must stop to eat. &lt;&lt;set $meals = $meals - 1&gt;&gt;
+</code></blockquote>
+
+<p>
+Notice how the same variable was used in the expression to decrease the number of meals by 1.
+</p>
+
+<p>
+If you make a mistake with <code>&lt;&lt;set&gt;&gt;</code>, a pink highlighted message will appear where you invoked it. Here's a sample error message, in this case forgetting the sigil before the variable <code>$meals</code>:
+</p>
+
+<p align="center">
+<span style="text-align: center; background-color: pink; color: black; font-weight: bold">bad expression: meals is not defined</span>
+</p>
+
+<p>
+Variables are reset every time the reader restarts a story. If you'd like to remember the value of a variable permanently, use the <code>&lt;&lt;remember&gt;&gt;</code> macro. It works exactly the same way as <code>&lt;&lt;set&gt;&gt;</code>, only it stores the variable in a browser cookie that remains between sessions.
+</p>
+
+<blockquote>
+
+<p><code>
+At long last, you have escaped the dungeons. &lt;&lt;remember $escapes = $escapes + 1&gt;&gt;
+</code></p>
+
+<p><code>
+So far, you have escaped the dungeons &lt;&lt;print $escapes&gt;&gt; times.
+</code></p>
+
+</blockquote>
+
+<p>
+If you are only interested in remembering the current state of a variable, you don't need to include an assignment:
+</p>
+
+<blockquote><code>
+&lt;&lt;remember $meals&gt;&gt;
+</code></blockquote>
+
+<p class="caution">
+Since readers can't reset the value of a <code>&lt;&lt;remember&gt;&gt;</code>ed variable themselves, the macro should be used carefully.
+</p>

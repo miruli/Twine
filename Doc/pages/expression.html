@@ -1,0 +1,87 @@
+
+
+<h2>What's an Expression?</h2>
+
+<p>
+Before we delve into things any deeper, we need to talk about a new concept called an <i>expression</i>. At first you probably will scratch your head and wonder what this has to do with hypertext. But trust me for now. It'll make sense in a chapter or two.
+</p>
+
+<p>
+So: an expression is a lot like a mathematical formula. When a computer sees an expression, it simplifies it into a single value. So this expression:
+</p>
+
+<p class="code">
+2 + 2
+</p>
+
+<p>
+... becomes the number 4. Basically, the computer follows whatever directions you set down. This process is called <i>evaluation</i>. This isn't algebra; everything you start with has to be a known quantity. You can do all the basic mathematical things you'd expect in an expression.
+</p>
+
+<p class="code">
+(1 + 2) * 4 + (3 + 2) / 5
+</p>
+
+<p>
+This evaluates to the number 13. Remember, the computer follows the same order of operations you had to back in middle school: multiplying and dividing, then adding and subtracting. You can group <i>subexpressions</i> together and force them to be evaluated together with parentheses.
+</p>
+
+<p>
+There's a second kind of value you can use in an expression: strings. <a href="tiddlermacro.html#string">Remember them</a>? A string is a bunch of characters strung together, demarcated by either quotation marks or apostrophes. You can use strings in expressions:
+</p>
+
+<p class="code">
+"Hello" + " " + "sailor"
+</p>
+
+<p>
+This expression pushes the strings together, and evaluates to the string <code>"Hello sailor"</code>. Notice how we had to add the space in between the words; computers aren't smart enough to do that for us. Also, you can only add strings together. You can't subtract them, much less multiply or divide them. There are some tricks we'll discuss later, though, but for now, think of strings as just bits of text that you can push together as need be.
+</p>
+
+<p>
+We'll close with a quick discussion of what happens when you use numbers and strings in the same expression. What do you think this evaluates to?
+</p>
+
+<p class="code">
+"Hello" + 8
+</p>
+
+<p>
+Computers don't know how to add a number to a string &mdash; that's just weird. So they do the next best thing: they convert the number 8 into the string <code>"8"</code>, then push the two strings together. So this evaluates to the string <code>"Hello8"</code>. In short, the computer will always convert a number to a string in a pinch, but you have to make a special request to go in the other direction.
+</p>
+
+<p class="developer">
+To do this, you can use the function <code>parseInt</code> to convert a string into a round number, or <code>parseFloat</code> to convert to a decimal. Here are two examples:
+</p>
+
+<p class="code">
+parseInt("55")
+</p>
+
+<p class="code">
+parseFloat("3.1459")
+</p>
+
+<p>
+Beware, though! A string may look a number, but if there are quotes around it, computers will always treat it as a string. This expression actually evaluates to the string "22":
+</p>
+
+<p class="code">
+"2" + 2
+</p>
+
+<p>
+Weird stuff. But trust me. This is going to get cool in a moment.
+</p>
+
+<p class="developer">
+If you used JavaScript at all before, or for that matter most any programming language, this is all old hat. In fact, expressions are evaluated by TiddlyWiki by passing them to the <code>eval</code> function, with a little pre-processing. We'll talk about what that pre-processing is in later chapters.
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('actionsmacro')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('actionsmacro')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('variables')">Next</a> <a href="javascript:void(0)" onclick="showPage('variables')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

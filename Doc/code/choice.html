@@ -1,0 +1,77 @@
+<p>
+Many choices a reader makes in a story ought to be <b>exclusive</b>. Consider a passage like this:
+</p>
+
+<blockquote>
+
+<p>
+R. N. Rupal nods his head and speaks quickly to his assistant in Nepali. Within minutes you have the
+necessary papers for the expedition, stamped in the proper places with the official seal of the Nepalese
+government. As you shake hands before leaving, he stops you. "If you are determined to go on your
+expedition, it could be easier and safer if I come with you."
+</p>
+
+<p>
+What should you do? Having a government official along with you might just cause delays and bureaucratic
+snafus. On the other hand, he could smooth the way.
+</p>
+
+<p>
+<i>If you accept Runal's offer to join you, turn to page 24.</i>
+</p>
+
+<p>
+<i>If you decline his offer, turn to page 27.</i>
+</p>
+
+</blockquote>
+
+<p class="source">
+(R. A. Montgomery, <cite>The Abominable Snowman</cite>)
+</p>
+
+<p>
+Obviously, the reader shouldn't be allowed to both bring along R. N. Rupal and leave him behind in the
+same session. (Of course, he could easily click the <b>Rewind to Here</b> link and try a different path.)
+<b>The <code>&lt;&lt;choice&gt;&gt;</code> macro allows allows you to lock away paths in your story.</b>
+A choice looks exactly like a regular link, but as soon as it's clicked, it disables all the other choices
+in the same passage. Here's what the source code of the passage above might look like:
+</p>
+
+<blockquote>
+
+<p><code>
+:: Departing<br />
+R. N. Rupal nods his head and speaks quickly to his assistant in Nepali. Within minutes you have the necessary papers for the expedition, stamped in the proper places with the official seal of the Nepalese government. As you shake hands before leaving, he stops you. "If you are determined to go on your expedition, it could be easier and safer if I come with you."
+</code></p>
+
+<p><code>
+What should you do? Having a government official along with you might just cause delays and bureaucratic snafus. On the other hand, he could smooth the way.
+</code></p>
+
+<p><code>
+* &lt;&lt;choice "Accept his offer"&gt;&gt;<br />
+* &lt;&lt;choice "Decline politely"&gt;&gt;
+</code></p>
+
+</blockquote>
+
+<p>
+The title of the passage the choice links to may be enclosed by either quotation marks (<code>"</code>) or single quotes (<code>'</code>), but they must be around the title. When you do this, you identify the title as something called a <b>string</b>. This isn't important yet, but will come into play with more complex code.
+</p>
+
+<p>
+If you'd like to display a different name for the choice than the passage's title, you may add it as a quoted phrase after the passage's title.
+</p>
+
+<blockquote><code>
+* &lt;&lt;choice "Dining with R.N. Rupal" "Accept"&gt;&gt;<br />
+* &lt;&lt;choice "Dining alone" "Decline"&gt;&gt;
+</code></blockquote>
+
+<p class="info">
+Obviously, the <code>&lt;&lt;choice&gt;&gt;</code> macro doesn't make sense if you're using the
+<a href="simple/storyformats.html">Sugarcane story template</a>. Readers can easily jump backwards
+in a story with their browsers' back buttons. If you try to use this macro in a Sugarcane story,
+it simply creates a normal link.
+</p>

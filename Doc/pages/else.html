@@ -1,0 +1,50 @@
+
+
+<h2>The &lt;&lt;else&gt;&gt; Macro</h2>
+
+<p>
+You'll often want to show some text if a condition is true, and other text instead if it's false. That's where <code>&lt;&lt;else&gt;&gt;</code> comes in. If you place it inside an <code>&lt;&lt;if&gt;&gt;</code> macro, the latter part will be shown if the condition is false.
+</p>
+
+<p>
+That was a pretty complicated way of putting a simple concept. Here's <code>&lt;&lt;else&gt;&gt;</code> in action:
+</p>
+
+<p class="code">
+:: The End<br />
+&lt;&lt;if $heroineSaved&gt;&gt;<br />
+"You did it, Ico!" Yorda says, clasping your hand in hers.<br />
+&lt;&lt;else&gt;&gt;<br />
+You stare off into the distance, alone.<br />
+&lt;&lt;endif&gt;&gt;
+</p>
+
+<p>
+By the way, you can nest <code>&lt;&lt;if&gt;&gt;</code>s if you want. Most of the time, this can be accomplished with an <code>and</code> in your condition, but you may want to do something like this:
+</p>
+
+<p class="code">
+:: The End<br />
+&lt;&lt;if $heroineSaved&gt;&gt;<br />
+"You did it, Ico!" Yorda says, clasping your hand in hers.<br />
+<br />
+&lt;&lt;if not $villainVanquished&gt;&gt;<br />
+"We've got to get out of here before the queen finds us," you say.<br />
+&lt;&lt;endif&gt;&gt;<br />
+<br />
+&lt;&lt;else&gt;&gt;<br />
+You stare off into the distance, alone.<br />
+&lt;&lt;endif&gt;&gt;
+</p>
+
+<p>
+This kind of stuff gets a little mindbending. The easiest way to simplify is to put stuff into separate tiddlers, including them with <code>&lt;&lt;tiddler&gt;&gt;</code>. 
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('logic')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('logic')">Previous</a>
+</p>
+
+<p class="next">
+<a href="javascript:void(0)" onclick="showPage('remember')">Next</a> <a href="javascript:void(0)" onclick="showPage('remember')"><img src="img/next.png" width="32" height="32" alt="" /></a>
+</p>

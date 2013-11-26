@@ -1,0 +1,37 @@
+
+
+<h2>The &lt;&lt;silently&gt;&gt; Macro</h2>
+
+<p>
+Sometimes you'll want to do many things in a single tiddler. It's a good idea to put each command on a separate line, to make it easier to read. Unfortunately, this inserts blank lines in your tiddler when it's displayed &mdash; not very aesthetically pleasing.
+</p>
+
+<p>
+This is where the <code>&lt;&lt;silently&gt;&gt;</code> macro comes in. Just like <code>&lt;&lt;silently&gt;&gt;</code>, it has a end macro &mdash; <code>&lt;&lt;endsilently&gt;&gt;</code>. Everything between the two is evaluated silently, without the user seeing anything.
+</p>
+
+<p>
+There's one important trick to this macro: it doesn't show anything at all, <b>including error messages</b>. So if something isn't going right with your tiddler, try taking out the <code>&lt;&lt;silently&gt;&gt;</code> macro and see if an error message pops up.
+</p>
+
+<p>
+This macro is ideal for setting up the state of the story at its outset. Here's how you might do things:
+</p>
+
+<p class="code">
+:: Startup<br />
+&lt;&lt;silently&gt;&gt;&lt;&lt;tiddler '(setup)'&gt;&gt;&lt;&lt;endsilently&gt;&gt;It's the first day of the school year...<br />
+<br />
+<br />
+:: (setup)<br />
+&lt;&lt;set classesCut = 0&gt;&gt;<br />
+&lt;&lt;set lunchMoney = 2.25&gt;&gt;
+</p>
+
+<p>
+So, you've made it to the end! Those are all the macros built into Jonah. You should be able to do some fairly sophsticated things now. Give it a try!
+</p>
+
+<p class="prev">
+<a href="javascript:void(0)" onclick="showPage('remember')"><img src="img/prev.png" width="32" height="32" alt="" /></a> <a href="javascript:void(0)" onclick="showPage('remember')">Previous</a>
+</p>
